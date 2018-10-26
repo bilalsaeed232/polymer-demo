@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>polymerdemo</title>
+  <meta name="description" content="testing polymer">
+
+  <!-- See https://goo.gl/OOhYW5 -->
+  <link rel="manifest" href="/manifest.json">
+
+  <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script type="module">
+    import '@polymer/paper-toast/paper-toast.js';
+    import '@polymer/paper-toolbar/paper-toolbar.js';
+    import '/src/polymerdemo-app/polymerdemo-app.js';
+    import '/src/polymerdemo-app/custom-elements/custom-banner.js'
+    import '/src/polymerdemo-app/custom-elements/login-form.js';
+  </script>
+
+  <style>
+    login-form.golden {
+      --login-form-background: cornsilk;
+      --login-form-border: goldenrod;
+    }
+  </style>
+
+  <script>
+    window.onload = function () {
+      document.querySelector('custom-banner').addEventListener('visible-changed', function (e) {
+        console.log('Visible changed: ', e.target.visible);
+      })
+    }
+  </script>
+
+</head>
+
+<body>
+  <polymerdemo-app>
+    <paper-toolbar>
+      <div slot="top" class="title">UMS</div>
+    </paper-toolbar>
+    <custom-banner>Click x to close </custom-banner>
+    <section class="login-section">
+      <login-form class="golden"></login-form>
+    </section>
+    <paper-toast id="globalToast" text="This is toast" opened duration="1000"></paper-toast>
+  </polymerdemo-app>
+</body>
+
+</html>
