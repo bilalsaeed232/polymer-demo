@@ -40,13 +40,18 @@ class LoginForm extends PolymerElement {
                 :host #formToast {
                     --paper-toast-color: goldenrod;
                 }
+
+                :host #passText { display: none; }
             </style>
             <div id="form-wrapper">
                 <input type="color" id="color"></input>
                 <h1>Login</h1>
                 <form name="loginForm" id="loginForm">
                     <paper-input label="Username" required ></paper-input>
-                    <paper-input label="Password" type="password" required></paper-input>
+                    <paper-input label="Password" type="password" value={{password}} required></paper-input>
+                    <span id="passText">[[password]]</span>
+                    <label><input type="checkbox" name="show" id="showPass"> Show Password</label>
+                    <br/>
                     <paper-button id="loginBtn" raised>Login</paper-button>
                 </form>
                 <paper-toast id="formToast"></paper-toast>
@@ -56,7 +61,7 @@ class LoginForm extends PolymerElement {
 
     static attributes() {
         return {
-
+            password: String
         }
     }
 
@@ -74,6 +79,16 @@ class LoginForm extends PolymerElement {
 
         this.$.color.addEventListener('change', (e) => {
             this.style.setProperty('--login-form-border', e.target.value);
+        })
+
+
+        this.$.showPass.addEventListener('click', (e) => {
+
+            if (this.$.showPass.checked)
+                this.$.passText.style.display = 'block';
+            else {
+                this.$.passText.style.display = 'none';
+            }
         })
 
     }
