@@ -1,7 +1,0 @@
-{
-  "name": "polymerdemo",
-  "short_name": "polymerdemo",
-  "description": "testing polymer",
-  "start_url": "/",
-  "display": "standalone"
-}
