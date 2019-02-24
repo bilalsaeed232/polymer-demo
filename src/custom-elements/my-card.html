@@ -1,0 +1,64 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+
+<dom-module id="my-card">
+    <template>
+        <style>
+            :host {
+                font-size: 16px;
+            }
+
+            .card {
+                max-width: 200px;
+                max-height: 50px;
+                padding: 20px;
+                border: 2px solid skyblue;
+                display: inline-block;
+                background: url('../assets/images/bg.jpeg') no-repeat;
+                background-size: cover;
+                color: #eee;
+            }
+
+            h1,
+            p {
+                margin: 0.2rem;
+
+            }
+
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 0.6rem;
+            }
+        </style>
+        <div class="card" card-data="">
+            <h1>{{full}}</h1>
+            <p>{{email}}</p>
+            <p>{{phone}}</p>
+        </div>
+    </template>
+    <script>
+        class MyCard extends Polymer.Element {
+            constructor() {
+                super();
+                console.dir(this);
+            }
+
+            static get is() {
+                return 'my-card';
+            }
+
+            static get properties() {
+                return {
+                    full: String,
+                    email: String,
+                    phone: String
+                }
+            }
+        }
+
+        customElements.define(MyCard.is, MyCard);
+    </script>
+</dom-module>

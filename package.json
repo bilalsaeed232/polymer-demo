@@ -1,0 +1,24 @@
+{
+  "name": "polymer-demo",
+  "version": "1.0.0",
+  "description": "Everything about polymer js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bilalsaeed232/polymer-demo.git"
+  },
+  "keywords": [
+    "polymer",
+    "javascript",
+    "frontend"
+  ],
+  "author": "Bilal Saeed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bilalsaeed232/polymer-demo/issues"
+  },
+  "homepage": "https://github.com/bilalsaeed232/polymer-demo#readme"
+}
