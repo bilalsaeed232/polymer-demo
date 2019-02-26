@@ -34,9 +34,9 @@
             }
         </style>
         <div class="card" card-data="">
-            <h1>{{full}}</h1>
-            <p>{{email}}</p>
-            <p>{{phone}}</p>
+            <h1>{{data.full}}</h1>
+            <p>{{data.email}}</p>
+            <p>{{data.phone}}</p>
         </div>
     </template>
     <script>
@@ -52,10 +52,16 @@
 
             static get properties() {
                 return {
-                    full: String,
-                    email: String,
-                    phone: String
+                    data: {
+                        full: String,
+                        email: String,
+                        phone: String
+                    }
                 }
+            }
+
+            data_changed() {
+                console.log("FULL Changed");
             }
         }
 

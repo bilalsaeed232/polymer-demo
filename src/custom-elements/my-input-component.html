@@ -1,0 +1,42 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="my-input-component">
+    <template>
+        <style>
+
+        </style>
+        <div class="container">
+            <label for="inp">Enter Text:
+                <input type="text" name="inp" value="{{data}}">
+            </label>
+            <p>Your Text: [[data]]</p>
+        </div>
+    </template>
+    <script>
+        class MyInputComponent extends Polymer.Element {
+
+
+            constructor() {
+                super();
+            }
+
+            static get is() {
+                return 'my-input-component';
+            }
+
+            static get properties() {
+                return {
+                    data: String
+                }
+            }
+
+
+            ready() {
+
+            }
+        }
+
+        customElements.define(MyInputComponent.is, MyInputComponent);
+    </script>
+
+</dom-module>

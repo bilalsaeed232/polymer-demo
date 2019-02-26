@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <h1>Business Card Generator</h1>
-        <form>
+        <form action="">
             <div>
                 <label for="full_name">
                     Full Name:
@@ -36,12 +36,25 @@
                 </label>
             </div>
             <div>
-                <button>Generate</button>
+                <button type="submit">Generate</button>
             </div>
         </form>
         <br>
-        <my-card full="Bilal" email="bilal@gmail.com"></my-card>
+        <my-card data="{{data}}"></my-card>
     </div>
+
+    <script>
+        document.forms[0].onsubmit = function (e) {
+            var target = e.target;
+            var myCard = document.getElementsByTagName('my-card')[0];
+            myCard.data = {
+                full: target.full_name.value,
+                phone: target.phone.value,
+                email: target.email.value
+            };
+            return false;
+        }
+    </script>
 </body>
 
 </html>
