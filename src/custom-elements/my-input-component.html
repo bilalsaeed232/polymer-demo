@@ -7,7 +7,7 @@
         </style>
         <div class="container">
             <label for="inp">Enter Text:
-                <input type="text" name="inp" value="{{data}}">
+                <input type="text" name="inp" value="{{data::input}}">
             </label>
             <p>Your Text: [[data]]</p>
         </div>
@@ -31,9 +31,6 @@
             }
 
 
-            ready() {
-
-            }
         }
 
         customElements.define(MyInputComponent.is, MyInputComponent);
